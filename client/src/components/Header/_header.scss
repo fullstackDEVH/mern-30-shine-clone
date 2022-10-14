@@ -1,0 +1,17 @@
+
+.header {
+    width : 100%;
+    height : $header-height;
+    background-color: #fff;
+    box-shadow: 0 2px 8px #cccccc;
+    border-bottom: 1px solid #eeeeeeb3;
+    padding: 0 50px;
+
+    @include tablet {
+        padding: 0 20px;
+    }
+  
+    @include mobile {
+        padding: 0 10px;
+    }
+};

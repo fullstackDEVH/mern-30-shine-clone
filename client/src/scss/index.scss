@@ -1,2 +1,15 @@
 @import './variables';
+@import './mixins';
+@import './base';
+
+// Header
+@import '../components/Header/header';
+ 
+// Home page
 @import '../pages/Home/home.scss';
+// other services page
+
+// Footer
+@import '../components/Footer/footer';
+
+// components
