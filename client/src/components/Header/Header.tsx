@@ -25,7 +25,7 @@ const Header : React.FC<IMyProps> = () => {
                 </Link>
             </div>
             <ul className={`header__links ${showTabletMenu ? "active" : ""}`}>
-                <div className="header__links_logo">
+                <div className="header__links_logo" onClick={(e)=>setShowTabletMenu(false)} >
                     <Link to ="/">
                         <img src={logo} alt="logo 30shine" />
                     </Link>

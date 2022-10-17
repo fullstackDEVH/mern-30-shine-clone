@@ -46,7 +46,7 @@
             background-color: white;
             z-index: 100;
 
-            overflow-y: scroll;
+            overflow-y: auto;
 
             transition: all .2s ease-in-out;
 
@@ -70,8 +70,7 @@
 
         &_close {
             display: none;
-            display : inline-block;
-
+           
             @include tablet {
                 position: absolute;
                 top: 1.6rem;
@@ -88,6 +87,7 @@
 
         &_item {
             text-transform: uppercase;
+            position: relative;
 
             a{
                 font-weight: 400;
@@ -104,6 +104,21 @@
                 a {
                     display: flex;
                     align-items: center;
+                    
+
+                    &::before {
+                        content: "";
+                        width: 24px;
+                        height: 24px;
+                        background-image: url("../../assets/close.svg");
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        right: 0;
+                        top : 50%;
+                        transform: translateY(-50%);
+                        overflow: hidden;
+                    }
+
                     svg {
                         margin-right: 12px;
                     }
@@ -116,9 +131,7 @@
                 width: 100%;
                 right : 0;
                 padding : $spacing-container-tablet;
-            }
-
-            
+            }       
         }
     };
     
