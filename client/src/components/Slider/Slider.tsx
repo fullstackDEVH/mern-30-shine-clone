@@ -62,7 +62,14 @@ const Slider = () => {
             </div>
 
             <div className="home-slide__form">
-
+                <form action="">
+                    <h2>ĐẶT LỊCH GIỮ CHỖ CHỈ 30 GIÂY</h2>
+                    <p>Cắt xong trả tiền, hủy lịch không sao</p>
+                    <div>
+                        <input type="tel" name="" id="" placeholder="Nhập SĐT để đặt lịch !!!" />
+                        <button>ĐẶT LỊCH NGAY</button>
+                    </div>
+                </form>
             </div>
 
         </div>

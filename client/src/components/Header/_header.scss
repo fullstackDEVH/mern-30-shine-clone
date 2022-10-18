@@ -5,7 +5,7 @@
     background-color: #fff;
     box-shadow: 0 2px 8px #cccccc;
     border-bottom: 1px solid #eeeeeeb3;
-    padding: 0 $spacing-container-tablet;
+    padding: 0 $spacing-container;
 
     @include flex(center, space-between);
 

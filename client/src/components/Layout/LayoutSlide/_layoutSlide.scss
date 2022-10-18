@@ -1,0 +1,27 @@
+.swipper {
+    width: 100%;
+    &-wrapper{
+        
+        .swiper-slide{
+
+        }
+    };
+
+    &-button-prev {
+
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #000;
+        color : white;
+    
+    }
+
+    .swiper-button-next {
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        background-color: #000 !important;
+        color : white !important;
+    }
+}
