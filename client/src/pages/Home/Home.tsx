@@ -15,6 +15,117 @@ const Home = () => {
                 service = {{banner : '' , services : []}}
                 // blog = {[{img : "", decription : ""}]}
             />
+
+            <Layout 
+                type = "service"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+            <Layout 
+                type = "slide"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+            <Layout 
+                type = "slide"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+            <Layout 
+                type = "slide"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+
+            <Layout 
+                type = "slide"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+            <Layout 
+                type = "service"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+            <Layout 
+                type = "slide"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+            <Layout 
+                type = "service"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+            <Layout 
+                type = "slide"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+            <Layout 
+                type = "slide"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+            <Layout 
+                type = "service"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+            <Layout 
+                type = "service"
+                title = "Trải nghiệm dịch vụ " 
+                subtitle = "Thư giãn 30 phút và bạn sẽ tỏa sáng" 
+                isViewAll = {true}
+                service = {{banner : '' , services : []}}
+                // blog = {[{img : "", decription : ""}]}
+            />
+
+
         </>
     )
 };

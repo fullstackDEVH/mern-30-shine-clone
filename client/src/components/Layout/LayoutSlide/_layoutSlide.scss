@@ -1,27 +1,85 @@
-.swipper {
+.swiper {
     width: 100%;
+
+    padding: 0 1.5rem !important;
+
     &-wrapper{
         
         .swiper-slide{
+            
 
+
+            .slide__item {
+        
+                a {
+                    width: 100%;
+                    display: flex;
+                    height: 100%;
+                    overflow: hidden;
+                    border-radius: 0.5rem;  
+
+                    img {                  
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+               
+                a:not(:last-child) {
+                    margin-bottom: 0.5rem;
+                }
+
+                a:first-child {
+                    max-height: 280px;
+                }
+
+
+                p{
+                    
+                    font-size : 1rem;
+                }
+        
+                
+            }
         }
     };
 
     &-button-prev {
 
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: #000;
-        color : white;
-    
-    }
-
-    .swiper-button-next {
         width: 40px !important;
         height: 40px !important;
         border-radius: 50% !important;
         background-color: #000 !important;
         color : white !important;
+        left : 0;
+        transform: translateX(-20%);
+    
+        &::after{
+            font-size: 20px !important;
+            font-weight: 600 !important;
+        }
     }
+
+    &-button-next {
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        background-color: #000 !important;
+        color : white !important;
+        right : 0;
+        transform: translateX(20%);
+        
+        &::after{
+            font-size: 20px !important;
+            font-weight: 600 !important;
+        }
+    }
+
+    .swiper-button-disabled.swiper-button-prev{
+        
+        cursor: not-allowed !important;
+        background-color: #bd9b9b !important;
+        color: #5f5f5f !important;
+    }
+
+   
 }

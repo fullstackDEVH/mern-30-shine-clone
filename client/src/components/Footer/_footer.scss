@@ -1,0 +1,25 @@
+.footer {
+    background-color: #000;
+    font-family: be vietnam pro,sans-serif;
+    font-weight: 300;
+
+    &__contain {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        &_top {
+            display: flex;
+            
+            &_col {
+                flex : 0 0 33.3%;
+                color : white;
+                padding: 35px 15px 15px;
+            }
+        }
+
+        &_bottom {
+
+        }
+    }
+}

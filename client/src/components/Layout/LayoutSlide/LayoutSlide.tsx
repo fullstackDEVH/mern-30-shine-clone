@@ -1,9 +1,9 @@
-import React, { useState , FC} from 'react';
+import React, { FC} from 'react';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper";
-import { Swiper, SwiperSlide, useSwiper  } from "swiper/react";
+import {  Navigation } from "swiper";
+import { Swiper, SwiperSlide  } from "swiper/react";
 
 import img from '../../../assets/img1.jpg';
 import { IBlog } from '../../../interface/layout';
@@ -14,8 +14,8 @@ interface IProp {
 
 const LayoutSlide:FC<IProp> = () => {
     // thử useSwipper trên react codesanbox
-    let c= 5;
-    const swiper = useSwiper();
+   
+    // const swiper = useSwiper();
 
     return <div className = "layout-blog">
         
@@ -35,7 +35,7 @@ const LayoutSlide:FC<IProp> = () => {
             spaceBetween: 20
           },
           768: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 40
           },
           1024: {
@@ -50,11 +50,11 @@ const LayoutSlide:FC<IProp> = () => {
           [1,2,3,4,5,6,7,8].map((a,i)=> (
             <SwiperSlide key = {i}>
               <div className="slide__item">
-                  <a href="/">
-                    <img src={img} alt="" />
+                  <a href="/" >
+                    <img src={img} alt="" className = "hover-scale" />
                   </a>
                   <a href="/">
-                    <p>Supporter thân thiện - Đón tiếp, lắng nghe và hỗ trợ bạn mọi lúc</p>
+                    <p className="box-2">Supporter thân thiện - Đón tiếp, lắng nghe và hỗ trợ bạn mọi lúc</p>
                   </a>
               </div>
             </SwiperSlide>

@@ -2,6 +2,12 @@
 
     &__banner {
         margin-bottom: 1rem;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        
+        a{
+            display : flex;
+        }
     }
 
     &__list {
@@ -13,6 +19,10 @@
             margin-left: -12px;
             margin-right: -12px;
             flex-wrap: wrap;
+
+            @include mobile {
+               flex-direction: column;
+            }
         }
 
         &_col {
@@ -22,6 +32,10 @@
 
             @include tablet {
                 flex : 0 0 50%;
+            }
+
+            @include mobile {
+                flex : 0 0 100%
             }
         }
 
@@ -66,9 +80,22 @@
                     font-size: 16px;
                     text-transform: lowercase;
                 }
+            }
 
+            .list-item-icon {
+                height: 24px;
+                width: 24px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 4px;
+            }
+
+            @include mobile {
+                position: relative;
             }
         }
 
     }
 }
+
