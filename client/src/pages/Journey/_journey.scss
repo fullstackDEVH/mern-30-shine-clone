@@ -1,0 +1,122 @@
+.journey {
+    background: white;
+
+    &-title {
+        font-family: Oswald;
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 30px 0;
+    }
+
+    &-subtitle {
+        font-size: 16px;
+        text-align: center;
+        padding: 0 0 30px;
+        max-width: 800px;
+        margin: 0 auto;
+
+        font-family: be vietnam pro,sans-serif;
+        font-weight: 300;
+        color: #111;
+        line-height: 1.5rem;
+    }
+
+    &-row {
+        margin-left: -15px;
+        margin-right: -15px;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        &__contain{
+            padding-left: 15px;
+            padding-right: 15px;  
+            
+            &.col-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+    
+            &.col-3 {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+    
+
+        }
+    }
+
+    &-col {
+   
+        margin-bottom: 30px;
+        border-radius: 8px;
+        overflow: hidden;
+        color: #111;
+        transition: all .3s;
+        border: 1px solid #dadada;
+        transition: all 0.3s ease;
+
+
+        &__media {
+
+            a {
+                display: flex;
+                overflow: hidden;
+                img {
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+
+        &__content {
+            padding: 10px;
+
+            &_tit {
+                font-size: 20px;
+                min-height: 70px;
+                -webkit-line-clamp: 2;
+                font-family: Oswald;
+                font-weight: 500;
+            }
+
+            &_subtitle {
+                font-size: 16px;
+                margin-top: 12px;
+                min-height: 50px;
+            }
+
+            &_tag {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                padding-top: 16px;
+
+                span {
+                    font-size: 12px;
+                    font-weight: 300;
+                    font-family: be vietnam pro,sans-serif;
+                }
+
+                div {
+
+                    img {
+
+                    }
+                }
+            }
+
+        }
+
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            .journey-col__media {
+                img {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}

@@ -162,3 +162,19 @@ $boxs: (1, 2, 3, 4);
       -webkit-box-orient: vertical;
     }
 }
+
+.container {
+  width : 100%;
+  max-width: $width;
+
+  margin: 0 auto;
+
+  @include tablet {
+    max-width: $width-tablet;
+  }
+
+  @include mobile {
+    max-width: $width-mobile;
+  }
+}
+

@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Home from './pages/Home/Home';
+import Journey from './pages/Journey/Journey';
 import OtherServices from './pages/OtherServices/OtherServices';
 
 function App() {
@@ -16,10 +17,13 @@ function App() {
   return (
     <div className="app">
       <Header doShowLogin={doShowLogin} />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/other-services' element={<OtherServices />} />
-      </Routes>
+
+        <Routes>
+          <Route path='/' element={ <Home />} />
+          <Route path='/other-services' element={ <OtherServices />} />
+          <Route path="shine-journey" element = { <Journey /> } />
+        </Routes>
+      
       <Footer />
       <Login doShowLogin={doShowLogin} overlay={overlay} />
     </div>
