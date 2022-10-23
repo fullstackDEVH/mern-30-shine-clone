@@ -16,7 +16,7 @@
     }
   } 
   
-@mixin gridCenter() {
+@mixin gridCenter {
   display : grid;
   place-items: center;
 }

@@ -7,15 +7,19 @@ import { IoClose } from 'react-icons/io5';
 import { RiListSettingsFill, RiContactsFill } from 'react-icons/ri';
 
 interface IMyProps {
-
+    doShowLogin : () => void
 };
 
-const Header : React.FC<IMyProps> = () => {
+const Header : React.FC<IMyProps> = ({ doShowLogin }) => {
     const [showTabletMenu, setShowTabletMenu] = useState<boolean>(false);
 
     const doShowMenu = () => {
         setShowTabletMenu(pre => !pre)
     };
+
+    // const mouse = (e :  React.MouseEvent<HTMLElement>) => {
+    //     console.log(e)
+    // }
 
     return (
         <div className = "header">
@@ -36,7 +40,7 @@ const Header : React.FC<IMyProps> = () => {
                 {
                     !showTabletMenu ? (
                         headerLinks.map((link, i) => (
-                            <li className="header__links_item" key={link.path + i}>
+                            <li className="header__links_item" key={link.path + i} >
                                 <Link to = {`${link.path}`}>{link.display}</Link>
                             </li>
                         ))
@@ -55,7 +59,7 @@ const Header : React.FC<IMyProps> = () => {
                 
             </ul>
             <div className="header__sigin">
-                <div className="header__sigin_btn">
+                <div className="header__sigin_btn" onClick= {doShowLogin}>
                     <FaCrown />
                     <span>ĐĂNG NHẬP</span>
                 </div>

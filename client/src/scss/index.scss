@@ -7,9 +7,12 @@
  
 // Home page
 @import '../pages/Home/home.scss';
-// other services page
+
+// Other Service page
+@import '../pages/OtherServices/otherService';
 
 // Footer
 @import '../components/Footer/footer';
 
-// components
+// Login
+@import '../components/Login/login';

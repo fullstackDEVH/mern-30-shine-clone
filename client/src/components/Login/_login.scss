@@ -1,0 +1,108 @@
+.login {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in;
+
+    &.show {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &-overlay {
+        position: fixed;
+        z-index: 1001;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: rgba(0,0,0,0.45);
+    }
+
+    &-modal {
+        position: fixed;
+        z-index: 1001;
+        width: 450px;
+        
+        top: -100%;
+        left: 50%;
+        transition: all 0.3s ease-out;
+
+        transform: translateX(-50%);
+
+        background-color: white;
+        padding: 1.5rem;
+
+        &-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 25px;
+            height: 25px;
+
+            @include gridCenter;
+
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 400;
+        }
+
+        &-body {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+
+            span { 
+                text-align: center;
+                margin-bottom: 15px;
+                margin-top: 10px;
+                font-weight: 400;
+                letter-spacing: 1.1px;
+            }
+
+            &-input {
+                width: 100%;
+
+                input {
+                    height: 48px;
+                    border-radius: 4px;
+                    border: 2px solid #a3a3a3;
+                    color: #222;
+                    padding: 4px 11px;
+                    font-size: 16px;
+                }
+            }
+
+            &-btn {
+                width: 100%;
+                border-radius: 4px;
+                height: 48px;
+                font-family: Oswald;
+                font-size: 18px;
+                background-color: #fc3;
+                transition : all 0.3s ease;
+
+                @include gridCenter;
+
+                span {
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+
+                &:hover {
+                    opacity : 0.7;
+                }
+            }
+        }
+    }
+
+    &.show &-modal {
+        top: 15%;
+    }
+}

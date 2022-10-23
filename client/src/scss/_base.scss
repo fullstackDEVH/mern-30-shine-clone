@@ -47,6 +47,11 @@ a{
   color: unset;
 }
 
+input {
+  width : 100%;
+  outline: none;
+}
+
 a:hover{
 //   color : $main-color;
 }
@@ -103,8 +108,9 @@ $numbers: (0, 1, 2, 3, 4, 5, 6, 7, 8);
 }
 
 
-.container {
+.app {
   width: 100%;
+  background-color: #eee
   // max-width: 1300px;
   // padding: 0 50px;
   // margin: auto;
@@ -137,7 +143,7 @@ $numbers: (0, 1, 2, 3, 4, 5, 6, 7, 8);
 }
 
 .hover-scale {
-  transition : transform 0.4s ease-in-out;
+  transition : transform 0.3s ease;
 }
 
 .hover-scale:hover {
