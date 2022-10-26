@@ -1,0 +1,40 @@
+.booking {
+    max-width: 1200px;
+    margin:  0 auto;
+
+    &-contain { 
+        max-width: 500px;
+        margin:  0 auto;
+        background-color: #f7f7f7;
+        width: 100%;
+    }
+
+    &-header {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        background-color: #eee;
+        color: #111;
+
+        span {
+            font-size: 18px;
+            font-family: be vietnam pro,sans-serif;
+            font-weight: 600;
+            flex: 1 1;
+        }
+    }
+
+    &-body {
+        font-family: be vietnam pro,sans-serif;
+        font-weight: 300;
+        color: #000;
+        background: #fff;
+        padding: 30px 15px 0;
+        position: relative;
+
+    }
+
+    &-fixed {
+
+    }
+}

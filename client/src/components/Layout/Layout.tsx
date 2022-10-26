@@ -18,12 +18,12 @@ const Layout:FC<ILayout> = ({ title, isViewAll, subtitle, type, blog, service })
                         </div>
                     </div>
                     {
-                        isViewAll && (
+                        isViewAll ? (
                             <div className="layout-cont__head_view_all">
                                 <span>Xem tất cả</span>
                                 <IoMdArrowDropright size = {20} />
-                            </div>
-                    )}
+                            </div>) : null
+                    }
                     
                 </div>
                 {

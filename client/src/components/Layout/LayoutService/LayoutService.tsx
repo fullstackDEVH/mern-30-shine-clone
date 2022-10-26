@@ -35,10 +35,7 @@ const LayoutService:FC<IProp> = () => {
                                 </a>
                             </div>
                         ))
-                    }
-
-                   
-                    
+                    }                  
                 </div>
             </div>
         </div>

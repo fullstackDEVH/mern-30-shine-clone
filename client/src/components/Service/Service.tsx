@@ -15,20 +15,20 @@ const Service:FC<IProps> = ({ title, banner, list, subtitle}) => {
                         {title}
                     </div>
                     {
-                        banner && (
+                        banner ? (
                             <div className="service-block__banner">
                                 <a href = "/">
                                     <img className="hover-scale" src={banner} alt="" />
                                 </a>
                             </div>
-                        )
+                        ) : null
                     }
                     {
-                        subtitle && (
+                        subtitle ? (
                             <div className="service-block__subtitle">
                                {subtitle}                
                             </div>
-                        )
+                        ) : null
                     }
                    
                     <div className="service-block__list">

@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
+import Discovery from './pages/Discovery/Discovery';
 import Home from './pages/Home/Home';
 import Journey from './pages/Journey/Journey';
 import OtherServices from './pages/OtherServices/OtherServices';
@@ -22,6 +23,7 @@ function App() {
           <Route path='/' element={ <Home />} />
           <Route path='/other-services' element={ <OtherServices />} />
           <Route path="shine-journey" element = { <Journey /> } />
+          <Route path="explore-hairstyles" element = { <Discovery /> } />
         </Routes>
       
       <Footer />
