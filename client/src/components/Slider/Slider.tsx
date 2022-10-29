@@ -1,10 +1,13 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import { dataSlider } from '../../constant/dataSlider';
 import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 const Slider = () => {
+    const [phone, setPhone] = useState<string>("");
     const [currentSlide, setCurrentSlide] = useState<number>(0);
     const slideRef = useRef<HTMLDivElement>(null);
+    const navi = useNavigate();
     
     const nextSlide = useCallback(() => {
         let currentIndex = currentSlide + 1 < dataSlider.length
@@ -38,6 +41,12 @@ const Slider = () => {
         }
     }, [nextSlide])
 
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        navi(`/booking?phone=${phone})`);
+    };
+
     return <>
         <div className="home-slide">
             <div className="home-slide__container">
@@ -62,11 +71,15 @@ const Slider = () => {
             </div>
 
             <div className="home-slide__form">
-                <form action="">
+                <form action="" onSubmit = {handleSubmit}>
                     <h2>ĐẶT LỊCH GIỮ CHỖ CHỈ 30 GIÂY</h2>
                     <p>Cắt xong trả tiền, hủy lịch không sao</p>
                     <div>
-                        <input type="tel" name="" id="" placeholder="Nhập SĐT để đặt lịch !!!" />
+                        <input type="tel" 
+                            value={phone}
+                            onChange={(e)=>setPhone(e.target.value)} 
+                            placeholder="Nhập SĐT để đặt lịch !!!" 
+                        />
                         <button>ĐẶT LỊCH NGAY</button>
                     </div>
                 </form>
