@@ -13,192 +13,26 @@
         display: flex;
         align-items: center;
         padding: 10px 0;
-        background-color: #eee;
         color: #111;
+        justify-content: center;
+        position: relative;
 
+        img {
+            position: absolute;
+            left : 10px;
+        }
+        
         span {
             font-size: 18px;
             font-family: be vietnam pro,sans-serif;
             font-weight: 600;
-            flex: 1 1;
         }
     }
 
-    &-body {
-        font-family: be vietnam pro,sans-serif;
-        font-weight: 300;
-        color: #000;
-        background: #fff;
-        padding: 30px 15px 0;
-        position: relative;
-
-        &__box {
-            border-left: 2px solid #e8e8e8;
-            padding : 0 0 20px 18px;
-            position: relative;
-
-            &.--done {
-                border-left: 2px solid #fc3;
-            }
-
-            &::before {
-                content : "";
-                width: 18px;
-                height: 18px;
-                display: inline-block;
-                background: #e8e8e8;
-                border-radius: 10px;
-                position: absolute;
-                top: -8px;
-                left: -10px;
-            }
-
-            &.--active::before {
-                background: #fc3;
-                width: 12px;
-                height: 12px;
-                top: -4px;
-                left: -7px;
-            }
-
-            &.--done::before {
-                background: #fc3;
-            }
-
-
-            &::after {
-                content : "";  
-                width: 12px;
-                height: 12px;
-                top: -4px;
-                left: -7px;
-                transition : all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-                position: absolute;
-                border-radius: 50%;
-                opacity : 0;
-            }
-
-            &.--active::after {
-                background: #fc3;
-                animation: timeline-active .7s cubic-bezier(0,0,.2,1) infinite;
-
-                @include keyframes(timeline-active) {
-                    100% { 
-                        transform: scale(1.5);
-                        opacity : 1;
-                    }
-                  }
-            }
-
-            &.--done::after {
-                content: "✓cc";
-                width: 60px;
-                height: 60px;
-    font-size: 12px;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    top: 3px;
-    left: -5px;
-    background-image: url("../../assets/logo.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-            }
-
-           
-
-
-            &_title {
-                font-size: 1.125rem;
-                margin-bottom: .85rem;
-                font-weight: 500;
-                line-height: 0.25rem;
-
-            }
-
-            &_bot {
-                width: calc(100% + 40px);
-                position: relative;
-                margin-left: -30px;
-                margin-bottom: 15px;
-                padding: 8px;
-                border-radius: 8px;
-                background: #ebf7ef;
-                border: 1px solid #c1e4ca;
-
-                display : none;
-                align-items: center;
-                visibility: hidden;
-                transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
-
-                &.--active {
-                    visibility: visible;
-                    display: flex;
-                    opacity : 1;
-                }
-
-                .content {
-                    flex : 1;
-                    font-family: be vietnam pro,sans-serif;
-                    padding: 0 5px;
-                    font-weight: 300;
-                    font-size: 14px;
-                }
-
-                img {
-                    width: 55px;
-                    height: 100%;
-                    margin-right: 10px;
-                    border-radius: 18px;
-                    box-shadow: 0 4px 12px #00000026;
-                }
-            }
-
-            &_contain {
-                background-color: #f7f7f7;
-                //     border-color: #f46969;
-                border-width: 1px;
-                border-radius: .25rem;
-                cursor: pointer;
-
-                padding-left: .625rem;
-                padding-right: .625rem;
-
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                height: 2.75rem;
-
-                .text {
-                    flex : 1;
-                    margin : 0 0.7rem;
-                    font-size: .9rem;
-                    color: #a3a3a3;
-
-                    .choose {
-                        color: #111;
-                    }
-                }
-            }
-
-            .text-warning {
-                color: #f46969;
-                font-size: .85rem;
-                line-height: 1rem;
-                margin-top: .375rem;            
-                visibility: hidden;
-                transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
-                display: none;
-
-                &.--active {
-                    visibility: visible;
-                    display: inline-block;
-                    opacity : 1;
-                }
-            }
-        }
-
-    }
+    @import './MainScreen/main';
+    @import './SalonScreen/salon';
+    @import './ServiceScreen/service';
+    
 
     &-fixed {
         font-size: 25px;

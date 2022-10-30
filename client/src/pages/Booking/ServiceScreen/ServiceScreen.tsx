@@ -4,12 +4,12 @@ interface IProps {
 
 };
 
-const SalonScreen: FC<IProps> = ({ }) => {
+const ServicesScreen: FC<IProps> = ({ }) => {
     return (
         <>
-            SalonScreen
+            ServicesScreen
         </>
     )
 };
 
-export default SalonScreen;
+export default ServicesScreen;
