@@ -25,7 +25,14 @@ const Booking = () => {
         <div className="booking">
             <div className="booking-contain">
                 <div className="booking-header">
-                    <span>Đặt lịch giữ chỗ</span>
+                    <span>
+                        {
+                            step === 0 ? "Đặt lịch giữ chỗ" :
+                            (
+                                step === 1 ? "Chọn Salon" : "Chọn dịch vụ"
+                            )
+                        }
+                    </span>
                     {
                         step === 1 || step === 2 ?  
                             <img 
@@ -41,14 +48,19 @@ const Booking = () => {
                             step === 1 ? <SalonScreen /> : <ServicesScreen />
                         )
                 }
-                <div className="booking-fixed">
-                    <div className="booking-fixed__contain">
-                        <div className={`booking-fixed__contain_btn ${infor.salon && infor.time && "--done"}`}>
-                            Hoàn tất
+                {
+                    step === 0 || step ===2 ? (
+                        <div className="booking-fixed">
+                            <div className="booking-fixed__contain">
+                                <div className={`booking-fixed__contain_btn ${infor.salon && infor.time && "--done"}`}>
+                                    Hoàn tất
+                                </div>
+                                <span>Cắt xong trả tiền, huỷ lịch không sao</span>
+                            </div>
                         </div>
-                        <span>Cắt xong trả tiền, huỷ lịch không sao</span>
-                    </div>
-                </div>
+                    ) : null
+                }
+               
             </div>
         </div>
     )

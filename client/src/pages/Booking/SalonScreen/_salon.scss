@@ -1,0 +1,329 @@
+.salon-screen {
+    min-height: 455px;
+    font-family: be vietnam pro,sans-serif;
+    font-weight: 300;
+    color: #000;
+
+    &-input {
+        padding : 0 16px;
+        margin-bottom: 16px;
+
+        &-contain {
+            height: 48px;
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #0000002e;
+            background: #fff;
+
+            display: flex;
+            align-items: center;
+            padding: 4px 11px;
+
+
+            .icon-search {
+                margin-right: 8px;
+                cursor: pointer;
+            }
+
+            input {
+                border-color: transparent;
+                color: rgba(0,0,0,.85);
+                font-size: 16px;
+                font-family: be vietnam pro,sans-serif;
+                font-weight: 400;
+                flex : 1;
+
+                &::-webkit-input-placeholder { /* Edge */
+                    color: rgb(184, 184, 184);
+                }
+                  
+                &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: rgb(184, 184, 184);
+                }
+                  
+                &::placeholder {
+                    color: rgb(184, 184, 184);
+                }
+                  
+            }
+
+            .search-box {
+                position: absolute;
+                overflow-y: auto;
+                max-height: 350px;
+                min-height: 300px;
+                right: 0;
+                top: 101%;
+                left: 0;
+                z-index: 999;
+                box-shadow: 0 1px 6px 0 #20212447;
+                background-color: #fff;
+                cursor: pointer;
+                border: 1px solid #ccc;
+
+                visibility: hidden;
+                opacity: 0;
+                transition: all 1s ease;
+                transform: scale(0);
+                transform-origin: top left;
+
+                &.show {
+                    transform: scale(1);
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                /* width */
+                &::-webkit-scrollbar {
+                    width: 8px;
+                }
+                
+                /* Track */
+                &::-webkit-scrollbar-track {
+                    background: #f1f1f1;
+                    border-radius: 5px;
+                }
+                
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    background: #555;
+                    border-radius: 5px;
+                }
+                
+                /* Handle on hover */
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #888;
+                }
+                
+                .city {
+                    &-title {
+                        background-color: #ccc;
+                        font-size: 18px;
+                        padding: 10px;
+                    }
+                    &-item {
+                        background-color: white;
+                        font-size: 18px;
+                        padding: 10px;
+
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 1px solid #e8e8e8;
+
+                        &-name {
+
+                        }
+
+                        &-amount-bases {
+                            background: #fafafa;
+                            border: 1px solid #d9d9d9;
+                            border-radius: 2px;
+
+                            margin-right : 8px;
+                            padding : 2px 5px;
+                            font-size: 12px;
+
+                            &.no-bases {
+                                background-color: rgb(229, 77, 62);
+                                color : #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-location {
+        padding: 0 16px;
+        margin-bottom: 16px;
+        display: inline-block;
+
+        .contain {
+            background-color: white;
+            border: 1px solid rgba(129,39,77,.8);
+            border-radius: 8px;
+            padding: 8px;
+
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            img {
+
+            }
+            span {
+                margin-left: 5px;
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    &-list {
+        background-color: #fff;
+
+        &-regions {
+            padding: 0 16px;
+
+            .region {
+                padding: 16px 0;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid #e8e8e8;
+                }
+                
+                &-title {
+                    font-weight: 600;
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                }
+
+                &-cities {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: -5px;
+
+                    .city-name {
+                        cursor: pointer;
+                        flex: 0 0 auto;
+                        background: #889cbb;
+                        padding: 5px 12px;
+                        font-size: 16px;
+                        margin: 4px;
+                        border-radius: 4px;
+                        color: #fff;
+                        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+                        &:hover {
+                            background: #4578c5;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-bases {
+            padding : 15px 15px 0;
+
+            .district {
+                position: relative;
+                display: inline-block;
+                min-width: 175px;
+
+                &-box {
+                    border : 1px solid #d1d1d1;
+                    padding : 5px 14px;
+                    border-radius: 6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+
+                    span {
+                        font-weight: 500;
+                        margin-right: 10px;
+                    }
+                    img{
+                        transition: transform 0.3s ease;
+
+                        &.rotate {
+                            transform: rotate(90deg); 
+                        }
+                    }
+                }
+
+                &-dropdown {
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    right : 0;
+                    background-color: white;
+                    max-height: 270px;
+                    overflow-y: auto;
+                    box-shadow: 0 1px 6px 0 #20212447;
+                    z-index: 2;
+
+                    display: none;
+
+                    &.show {
+                        display: block;
+                    }
+
+                    &-item {
+                        padding: 7px 15px;
+                        border-bottom: .5px solid #e8e8e8;
+                        font-size: 14px;
+                        cursor: pointer;
+                        transition: 0.3s ease-in-out;
+                        &:hover {
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+
+            .salon-box-switch {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0;
+
+                .box-switch {
+                    // display: flex;
+                    // justify-content: space-between;
+                    // align-items: center;
+                
+                    span {
+                        font-size: 16px;
+                        font-weight: 500;
+
+                        & > span {
+                            color: #767676;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                    }
+                
+                }
+
+                .btn-switch {
+                    
+                }
+            }
+
+            .salon {
+
+                &-item {
+                    display: flex;
+                    padding : 10px 0;
+                    border-top : 1px solid #d1d1d1;
+
+                    &-media {
+                        flex: 0 0 30%;
+                    }
+
+                    &-content {
+                        flex: 0 0 70%;
+                        padding-left: 12px;
+
+                        .item-address {
+                            font-weight: 500;
+                            font-size: 14px;
+                            margin-bottom: 8px;
+
+                        }
+    
+                        .item-description {
+                            font-weight: 300;
+                            font-size: 13px;
+                        }    
+                    }
+                }
+            }
+        }
+    }
+
+
+}
