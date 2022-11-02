@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import MainScreen from './MainScreen/MainScreen';
 import SalonScreen from './SalonScreen/SalonScreen';
 import ServicesScreen from './ServiceScreen/ServiceScreen';
@@ -17,8 +18,16 @@ const Booking = () => {
         time : ""
     });
 
+    const navi = useNavigate();
+
     const handleStep = (step : number) => {
+
+        if(step === 3){
+            document.querySelector("#box-time .booking-body__box_contain")?.classList.toggle('show');            
+            return;
+        }
         setStep(step);
+        navi(`/booking?phone=0385151582&step=${step}`);
     };
 
     return (
@@ -38,27 +47,41 @@ const Booking = () => {
                             <img 
                                 src="https://30shine.com/static/media/arrowLeft.3e6be3da.svg" 
                                 alt="icon arrow left" 
-                                onClick = {()=>setStep(0)} 
+                                onClick = {()=>handleStep(0)} 
                             /> : null
                     }
                 </div>
+                
                 {
                     step === 0 ? <MainScreen handleStep={handleStep} infor={infor} /> : 
                         (
-                            step === 1 ? <SalonScreen /> : <ServicesScreen />
+                            step === 1 ? <SalonScreen /> : (step === 2 ? <ServicesScreen /> : null)
                         )
                 }
+
                 {
-                    step === 0 || step ===2 ? (
-                        <div className="booking-fixed">
-                            <div className="booking-fixed__contain">
-                                <div className={`booking-fixed__contain_btn ${infor.salon && infor.time && "--done"}`}>
-                                    Hoàn tất
+                    step === 0 ? 
+                        (
+                            <div className="booking-fixed">
+                                <div className="booking-fixed__contain">
+                                    <div className={`booking-fixed__contain_btn ${infor.salon && infor.time && "--done"}`}>
+                                        Hoàn tất
+                                    </div>
+                                    <span>Cắt xong trả tiền, huỷ lịch không sao</span>
                                 </div>
-                                <span>Cắt xong trả tiền, huỷ lịch không sao</span>
                             </div>
-                        </div>
-                    ) : null
+                        ) : 
+                        ( 
+                            step === 2 ? (
+                                <div className="booking-fixed">
+                                    <div className="booking-fixed__contain">
+                                        <div className={`booking-fixed__contain_btn ${infor.salon && infor.time && "--done"}`}>
+                                            Chọn dịch vụ
+                                        </div>
+                                    </div>
+                                </div> 
+                            ) : null
+                        )
                 }
                
             </div>

@@ -139,6 +139,7 @@
             align-items: center;
             justify-content: space-between;
             height: 2.75rem;
+            margin-top: 25px;
 
             .text {
                 flex : 1;
@@ -165,6 +166,46 @@
                 visibility: visible;
                 display: inline-block;
                 opacity : 1;
+            }
+        }
+
+        .extension {
+            &-title {
+
+            }
+
+            &-note {
+                
+                &-head {
+
+                    img {}
+                    span {
+
+                    }
+                }
+
+                &-input {
+
+                    textarea {
+
+                    }
+                }
+            }
+
+            &-advance {
+
+                &-item {
+
+                    .extension-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    p {
+
+                    }
+                }
             }
         }
     }

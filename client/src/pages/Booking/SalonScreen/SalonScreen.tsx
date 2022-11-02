@@ -142,9 +142,7 @@ const SalonScreen: FC<IProps> = () => {
                                 <span> (Có thể mất phí)</span>
                             </span>
                         </div>
-                        <div className="btn-switch">
-                            button
-                        </div>
+                        <input type="checkbox" ></input>
                     </div>
 
                     <div className="salon">

@@ -285,11 +285,67 @@
                             font-weight: 400;
                         }
                     }
-                
                 }
 
-                .btn-switch {
-                    
+                input[type="checkbox"] {
+                    width: 60px;
+                    height: 30px;
+                    appearance: none;
+                    background: #d1d1d1;
+                    border-radius: 30px;
+                    position: relative;
+                    cursor: pointer;
+
+                    &::before {
+                        content : "";
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: white;
+                        box-shadow: 0 2px 4px 0 #00230b33;
+
+                        transform: scale(1.05);
+                        transition: all 0.3s ease;
+                        z-index: 2;
+                    }
+
+                    &::after {
+                        content : "";
+                        position: absolute;
+                        top: 0;
+                        right: 2px;
+                        width: 30px;
+                        height: 30px;
+                        display: grid;
+                        place-items: center;
+                        z-index: 1;
+                        transition: all 0.3s ease;
+
+                        background-image: url("https://30shine.com/static/media/close.c547ff9a.svg");
+                        background-repeat: no-repeat;
+                        background-size: 60%;
+                        background-position: center;
+                    }
+
+                    &:checked {
+                        background-color: #fc3;
+
+                        &::before {
+                            left: 30px;
+                        }
+
+                        &::after {
+                            content: "";
+                            right: 28px;
+                            background-image: url("https://30shine.com/static/media/check.7ba59f21.svg");
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            
+                        }
+                    }
                 }
             }
 
