@@ -170,24 +170,59 @@
         }
 
         .extension {
-            &-title {
+            font-family: be vietnam pro,sans-serif;
 
+            &-title {
+                font-size: 1.2rem;
+                font-weight: 500;          
             }
 
             &-note {
                 
                 &-head {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    margin-bottom: .375rem;
 
                     img {}
                     span {
-
+                        font-size: 1rem;
+                        font-weight: 500;
                     }
                 }
 
                 &-input {
 
                     textarea {
+                        border-bottom: 1px solid #fe3;
+                        border-top: 0;
+                        border-right: 0;
+                        border-left: 0;
+                        width: 100%;
+                        padding: 5px;
+                        height: 35px;
+                        outline: none;
 
+                        font-size: 16px;
+                        font-weight: 300;
+
+                        &::placeholder {
+                            color : rgb(168, 167, 167);
+                            font-weight: 300;
+
+                        }
+                        ::-webkit-input-placeholder { /* Edge */
+                            color : rgb(168, 167, 167);
+                            font-weight: 300;
+                        }
+                          
+                        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                            color : rgb(168, 167, 167);
+                            font-weight: 300;
+
+                        }
+                          
                     }
                 }
             }
@@ -196,14 +231,28 @@
 
                 &-item {
 
+
                     .extension-header {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
+
+                        & > div:nth-child(1) {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+
+                            span {
+                                font-size: 1rem;
+                                font-weight: 500;
+                            }
+                        }
                     }
 
                     p {
-
+                        font-size: 0.9rem;
+                        font-weight: 300;
+                        margin-top: 0.4rem;
                     }
                 }
             }
