@@ -141,6 +141,16 @@
             height: 2.75rem;
             margin-top: 25px;
 
+            position: relative;
+
+            .icon-close {
+                transition : transform 0.2s ease;
+
+                &.rotate {  
+                    transform: rotate(90deg);
+                }
+            }
+
             .text {
                 flex : 1;
                 margin : 0 0.7rem;
@@ -151,6 +161,74 @@
                     color: #111;
                 }
             }
+
+            .list-timing {
+                position : absolute;
+                top: 100%;
+                z-index: 10;
+                background: white;
+
+                box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+                left: 0;
+                width: 100%;
+                display: none;
+
+                &.show{
+                    display : block;
+                }
+
+                &-item {
+                    padding: 0.4rem;
+                    border : 1px solid #e8e8e8;
+
+
+                    &-contain {
+                        display : flex;
+                        justify-content: space-between;
+                        font-size: 0.9rem;
+                        font-family: "be vietnam pro",sans-serif;
+
+                        .date {
+                            margin-left: 36px;
+                            font-size: 0.8rem;
+
+                        }
+
+                        .date-text {
+                            margin-right: 10px;
+                            font-size: 0.7rem;
+                            font-weight: 300;
+                            background-color: #11b14b;
+
+                            padding-top: .125rem;
+                            padding-bottom: .125rem;
+                            padding-left: .5rem;
+                            padding-right: .5rem;
+                            border-radius: 0.2rem;
+
+                            color: rgba(255,255,255, 0.95);
+
+                            &.important {
+                                background-color: #11b14b;
+
+                            }
+
+                            &.normal {
+                                background-color: #f87d6d;
+
+                            }
+                        }
+                    }
+
+                    & ~ & {
+                        border-bottom: 1px solid #000;
+                    }
+                }
+
+                &-item ~ &-item {
+                    border-bottom: 1px solid #000;
+                }
+            }
         }
 
         .text-warning {
@@ -159,15 +237,18 @@
             line-height: 1rem;
             margin-top: .375rem;            
             visibility: hidden;
-            transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
+            opacity : 0;
             display: none;
+            transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
 
-            &.--active {
+            &.--show {
                 visibility: visible;
                 display: inline-block;
                 opacity : 1;
             }
         }
+
+    
 
         .extension {
             font-family: be vietnam pro,sans-serif;
@@ -253,6 +334,40 @@
                         font-size: 0.9rem;
                         font-weight: 300;
                         margin-top: 0.4rem;
+                    }
+                }
+            }
+        }
+
+        // time booking
+        .time-box {
+            margin-top: 1rem;
+
+            &-contain {
+
+                &__item {
+                   
+                    & > div {
+                        background-color: white;
+                        border : 1px solid #333;
+                        text-align: center;
+    
+                        padding : 0.25rem 0.5rem;
+                        margin-top: 0.5rem;
+
+                    }
+
+                    & > .unavaiable {
+                        border: 1px solid #d1d1d1;
+                        background: #e8e8e8;
+                        color: #a3a3a3;
+                        cursor: not-allowed; 
+                    }
+
+                    & > .choose {
+                        background: $main-color;
+                        border-color: transparent;
+                        font-weight: 500;
                     }
                 }
             }

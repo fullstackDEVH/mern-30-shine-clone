@@ -30,9 +30,9 @@
         }
     }
 
-    @import './MainScreen/main';
-    @import './SalonScreen/salon';
-    @import './ServiceScreen/service';
+    @import '../../components/BookingCpn/MainScreen/main';
+    @import '../../components/BookingCpn/SalonScreen/salon';
+    @import '../../components/BookingCpn/ServiceScreen/service';
     
 
     &-fixed {
