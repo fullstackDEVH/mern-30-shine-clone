@@ -2,16 +2,11 @@ import { Swiper, SwiperSlide  } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-interface IInfor {
-    salon : string;
-    services : (string | number)[];
-    time : string;
-}
+import { IBooking } from "../../interface/booking";
 
 interface IProps {
-    infor : IInfor;
-}
+    infor : IBooking;
+};
 
 const TimeSlide : React.FC<IProps> = ({infor}) => {
 

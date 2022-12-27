@@ -86,11 +86,12 @@
         font-family: be vietnam pro,sans-serif;
         font-weight: 300;
         background: linear-gradient(180deg,#81274d,#c71155);
-        min-width: 545px;
+        min-width: 450px;
         border-radius: 8px;
         padding: 10px 15px;
    
         z-index: 91;
+
 
         @include tablet {
             bottom: -50%;
@@ -101,18 +102,19 @@
             flex-direction: column;
             align-items: flex-start;
             gap: 0.8rem;
+            font-size: 16px;
 
             padding : 0.6rem;
             border-radius: 0.3rem;
 
 
             h2 {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 color : white;
             }
             
             p {
-                font-size: 1.2rem;
+                font-size: 1rem;
                 font-weight: 400;
                 color : white;
             }
@@ -128,10 +130,11 @@
                     padding : 0 0.8rem;
                     outline: 0;
                     font-size: inherit;
-                    height: 50px;
+                    height: 44px;
                     border-radius: 0.4rem;
                     border: 0;
                     flex: 1;
+                    letter-spacing: 1.02px;
                     font-weight: 600;
                 }
 
@@ -142,6 +145,9 @@
                     background-color: $main-color;
                     border: none;
                     font-weight: 600;
+                    font-size: 15px;
+
+                    cursor: pointer
                 }
             }
         }

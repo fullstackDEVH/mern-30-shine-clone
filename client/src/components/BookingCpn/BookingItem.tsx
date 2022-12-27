@@ -1,12 +1,5 @@
 import React from 'react';
-
-interface IInfor {
-    salon : string;
-    services : (string | number)[];
-    time : string;
-}
-
-type Tfun =  () => void;
+import { IBooking, IInfor } from '../../interface/booking';
 
 interface IBookItem {
     children ?: React.ReactNode;
@@ -18,16 +11,11 @@ interface IBookItem {
     textWarning ?: string;
     fAnimate : (type : string) => string;
     infor : IInfor;
-    funcContain : () => void | Tfun;
+    funcContain : () => void;
     setModalTime ?: React.Dispatch<React.SetStateAction<boolean>>;
     modalTime ?: boolean;
     type : string;
 };
-interface IInfor {
-    salon : string;
-    services : (string | number)[];
-    time : string;
-}
 
 const BookItem : React.FC<IBookItem> = ( {
         children, botContent, botImg, containIcon, containText, title, textWarning,

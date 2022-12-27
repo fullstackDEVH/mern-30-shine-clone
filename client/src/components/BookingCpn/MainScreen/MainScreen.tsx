@@ -1,15 +1,9 @@
 import React, {FC, useRef, useState} from 'react';
+import { IInfor } from '../../../interface/booking';
 
 import BookItem from '../BookingItem';
 import ExtensionBook from '../ExtensionBook';
 import TimeSlide from '../TimeSlide';
-
-
-interface IInfor {
-    salon : string;
-    services : (string | number)[];
-    time : string;
-}
 
 interface IProps {
     infor : IInfor;
@@ -18,7 +12,7 @@ interface IProps {
 
 const MainScreen: FC<IProps> = ({ infor, handleStep }) => {
 
-    const [modalTime, setModalTime] = useState<boolean>(true);
+    const [modalTime, setModalTime] = useState<boolean>(false);
 
     const animate = (type : string) : string => {
         switch(type) {

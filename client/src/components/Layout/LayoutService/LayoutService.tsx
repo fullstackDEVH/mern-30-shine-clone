@@ -1,10 +1,10 @@
 import React , {FC} from 'react';
-import { IService } from '../../../interface/layout';
+import { IServices } from '../../../interface/layout';
 import {IoIosArrowForward} from 'react-icons/io';
 
 interface IProp {
-    service : IService | undefined
-  };
+    service : IServices | undefined
+};
 
 const LayoutService:FC<IProp> = () => {
     return (

@@ -9,7 +9,7 @@ interface IServiceItem {
     serviceImg : string
 }
 
-export interface IService {
+export interface IServices {
     banner : string,
     services : IServiceItem[]
 }
@@ -20,5 +20,5 @@ export interface ILayout {
     subtitle : string ,
     isViewAll : boolean
     blog ?: IBlog[],
-    service ?: IService,
+    service ?: IServices,
 }

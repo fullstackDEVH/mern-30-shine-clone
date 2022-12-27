@@ -1,13 +1,8 @@
-
-interface IInfor {
-    salon : string;
-    services : (string | number)[];
-    time : string;
-}
+import { IBooking } from "../../interface/booking";
 
 interface IProps {
-    infor : IInfor;
-}
+    infor : IBooking;
+};
 
 const ExtensionBook : React.FC<IProps> = ({infor}) => {
     return (

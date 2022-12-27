@@ -17,7 +17,7 @@ html{
 
 body {
   font-family: 'Oswald', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   @include mobile{
     font-size: 13px;
   };
@@ -25,16 +25,21 @@ body {
 
 ::-webkit-input-placeholder { /* Edge */
   color: grey;
+  font-size: 16px;
   font-weight: 600;
 }
 
 :-ms-input-placeholder { /* Internet Explorer */
   color: grey;
+  font-size: 16px;
+
   font-weight: 600;
 }
 
 ::placeholder {
   color: grey;
+  font-size: 16px;
+
   font-weight: 600;
 }
 

@@ -3,19 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import MainScreen from '../../components/BookingCpn/MainScreen/MainScreen';
 import SalonScreen from '../../components/BookingCpn/SalonScreen/SalonScreen';
 import ServicesScreen from '../../components/BookingCpn/ServiceScreen/ServiceScreen';
-
-interface IInfor {
-    salon : string;
-    services : (string | number)[];
-    time : string;
-}
+import { IInfor } from '../../interface/booking';
 
 const Booking = () => {
     const [step, setStep] = useState<number>(0);
     const [infor, setInfor] = useState<IInfor>({
         "salon" : "qW",
-        "services" : [],
-        "time" : ""
+        "services" : [2],
+        "time" : "1"
     });
 
     const navi = useNavigate();
