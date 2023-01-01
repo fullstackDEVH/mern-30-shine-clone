@@ -1,5 +1,5 @@
 import { catchAsync } from "../middleware/catchAsyncError.js";
-import BookingModel from "../models/BookingModel.js";
+import BookingModel from "../models/booking.model.js";
 
 export const createBooking = catchAsync(async (req, res, next) => {
   const booking = await BookingModel.create({});

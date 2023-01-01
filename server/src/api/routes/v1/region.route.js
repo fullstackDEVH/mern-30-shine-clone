@@ -1,5 +1,5 @@
 import express from 'express';
-import {createRegion, deleteRegion, getRegion, getAllRegions, updateRegion, getRegionCityProvice} from "../controllers/placeControlller";
+import {createRegion, deleteRegion, getRegion, getAllRegions, updateRegion, getRegionCityProvice} from "../../controllers/place.controller.js";
 
 const router = express.Router();
 

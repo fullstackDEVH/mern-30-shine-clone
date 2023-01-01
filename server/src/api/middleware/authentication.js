@@ -1,5 +1,5 @@
-import ErrorHandler from "../ultills/errorHandle";
-import userModel from "../models/userModel";
+import ErrorHandler from "../utils/errorHandle.js";
+import userModel from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 
 export const verifyToken = (req, res, next) => {

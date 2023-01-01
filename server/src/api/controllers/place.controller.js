@@ -1,11 +1,10 @@
-import ErrorHandler from "../ultills/errorHandle";
-import RegionModel from "../models/regionModel";
-import CityProviceModel from "../models/cityProviceModel";
-import AgencysModel from "../models/agencysModel";
+import RegionModel from "../models/regionModel.js";
+import CityProviceModel from "../models/cityProviceModel.js";
+import AgencysModel from "../models/agencys.model.js";
+import cityProviceModel from "../models/cityProvice.model.js";
 
-import { catchAsync } from "../middleware/catchAsyncError";
-import cityProviceModel from "../models/cityProviceModel";
-import agencysModel from "../models/agencysModel";
+import ErrorHandler from "../utils/errorHandle.js";
+import { catchAsync } from "../middleware/catchAsyncError.js";
 import mongoose from "mongoose";
 
 // region
@@ -238,7 +237,7 @@ export const getCityProviceAgency = catchAsync(
         
         // c1 : Promise.all
         const list = await Promise.all(cityProvice.agencys_Id.map(item=> {
-            return agencysModel.findById(item);
+            return AgencysModel.findById(item);
         }));
         // c2 : populate
 

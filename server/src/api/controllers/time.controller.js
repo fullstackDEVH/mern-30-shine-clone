@@ -1,7 +1,7 @@
-import timeModel from "../models/timeModel";
-import ErrorHandler from "../ultills/errorHandle";
-import { catchAsync } from "../middleware/catchAsyncError";
-import agencysModel from "../models/agencysModel";
+import timeModel from "../models/time.model.js";
+import agencysModel from "../models/agencys.model.js";
+import ErrorHandler from "../utils/errorHandle.js";
+import { catchAsync } from "../middleware/catchAsyncError.js";
 
 export const createTime = catchAsync(async (req, res, next) => {
   const time = await timeModel.create(req.body);

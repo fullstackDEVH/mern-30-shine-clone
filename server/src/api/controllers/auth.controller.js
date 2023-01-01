@@ -1,7 +1,7 @@
-import UserModel from "../models/userModel";
-import ErrorHandler from "../ultills/errorHandle";
-import {sendCookies} from "../ultills/jwtAndCookies";
-import {catchAsync} from "../middleware/catchAsyncError";
+import UserModel from "../models/user.model.js";
+import ErrorHandler from "../utils/errorHandle.js";
+import {sendCookies} from "../utils/jwtAndCookies.js";
+import {catchAsync} from "../middleware/catchAsyncError.js";
 
 export const register = catchAsync( 
     async (req, res, next) => {

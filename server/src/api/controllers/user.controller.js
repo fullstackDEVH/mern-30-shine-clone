@@ -1,5 +1,5 @@
-import UserModel from "../models/userModel";
-import ErrorHandler from "../ultills/errorHandle";
+import UserModel from "../models/user.model.js";
+import ErrorHandler from "../utils/errorHandle.js";
 
 export const userDetails = async (req, res, next) => {
 

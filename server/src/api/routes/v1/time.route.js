@@ -1,5 +1,5 @@
 import express from 'express';
-import {createTime, createTimeHour, getAllTimeSalon, getTimeSalon} from "../controllers/timeController";
+import {createTime, createTimeHour, getAllTimeSalon, getTimeSalon} from "../../controllers/time.controller.js";
 const router = express.Router();
 
 router.post('/:timeId', createTimeHour);

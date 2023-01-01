@@ -1,5 +1,5 @@
 import express from 'express';
-import { createCityProvice, getAllCityProvice, getCountCityProvice } from '../controllers/placeControlller';
+import { createCityProvice, getAllCityProvice, getCountCityProvice } from '../../controllers/place.controller.js';
 const router = express.Router();
 
 router.post('/:regionId', createCityProvice);

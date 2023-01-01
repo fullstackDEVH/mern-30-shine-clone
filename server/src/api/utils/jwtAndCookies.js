@@ -1,4 +1,4 @@
-import ErrorHandler from "./errorHandle";
+import ErrorHandler from "./errorHandle.js";
 
 export const sendCookies = async (user, statusCode , res) => {
     const token = await user.generateJWT();

@@ -1,5 +1,5 @@
 import express from 'express';
-import {register, login, logout,chekcOtp, checkPhoneNumber} from "../controllers/authController";
+import {register, login, logout,chekcOtp, checkPhoneNumber} from "../../controllers/auth.controller.js";
 const router = express.Router();
 
 router.post('/login', login);

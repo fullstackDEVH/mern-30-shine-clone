@@ -1,5 +1,5 @@
 import express from 'express';
-import { createAgencys,getAllAgency ,getCityProviceAgency} from '../controllers/placeControlller';
+import { createAgencys,getAllAgency ,getCityProviceAgency} from '../../controllers/place.controller.js';
 
 const router = express.Router();
 
