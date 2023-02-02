@@ -1,21 +1,24 @@
 import mongoose from "mongoose";
 
 const bookingSchema = mongoose.Schema({
-  phone_number: {
-    type: String,
+  user_id: {
+    type: mongoose.Types.ObjectId,
+    ref : "User",
     require: true,
   },
-  booking_infor: {
-    time: {
-      type: String,
-      require: true,
-    },
-    place: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Agency",
-      require: true,
-    },
+  services : [
+    {
+
+    }
+  ],
+  salonId : {
+
   },
+  status : String,
+  dateOfStart : Date,
+  timeType : String
+
+  
 });
 
 export default mongoose.model("Booking", bookingSchema);

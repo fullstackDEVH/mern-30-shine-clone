@@ -8,8 +8,8 @@ import { IInfor } from '../../interface/booking';
 const Booking = () => {
     const [step, setStep] = useState<number>(0);
     const [infor, setInfor] = useState<IInfor>({
-        "salon" : "qW",
-        "services" : [2],
+        "salon" : "1",
+        "services" : [1],
         "time" : "1"
     });
 

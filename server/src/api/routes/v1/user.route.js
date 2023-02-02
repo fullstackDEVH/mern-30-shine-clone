@@ -1,6 +1,6 @@
 import express from 'express';
 import {deleteUser, getAllUsers, userDetails} from "../../controllers/user.controller.js";
-import { isUser } from '../../middleware/authentication.js';
+import { isUser } from '../../middlewares/authentication.js';
 const router = express.Router();
 
 router.get('/', (req, ress)=> {

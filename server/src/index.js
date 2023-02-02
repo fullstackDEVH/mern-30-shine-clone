@@ -3,8 +3,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import mongoose from "mongoose";
 import dotenv from "dotenv"
-import { handleError } from "./api/middleware/errors.js";
-// import {router} from "./api/routes/main.route.js";
+import { handleError } from "./api/middlewares/errors.js";
 import routes from './api/routes/index.js';
 
 const app = express();
@@ -42,4 +41,3 @@ mongoose.connect(process.env.MONGOOSE_URL, {
         console.log(`you are listening on port 8080 and connect mongodb success!`)
     }))
     .catch(err => console.error(err));
-    app.listen(process.env.PORT || 8080)

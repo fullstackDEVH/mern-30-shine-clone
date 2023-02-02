@@ -1,19 +1,40 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction, AsyncThunk} from "@reduxjs/toolkit";
+
+type GenericAsyncThunk = AsyncThunk<unknown, unknown, any>
+type PendingAction = ReturnType<GenericAsyncThunk['pending']>
+type RejectedAction = ReturnType<GenericAsyncThunk['rejected']>
+type FulfilledAction = ReturnType<GenericAsyncThunk['fulfilled']>
 
 interface MyData {
-    // ...
-  }
+  // ...
+};
 
-  interface MyKnownError{
-    
+interface UserAttributes {
+  name : string;
+}
+
+interface MyKnownError{
+  errorMessage: string;
+};
+
+
+// use OMIT AND PICK to delete field in interface
+
+const fetchUserById = createAsyncThunk<
+  MyData, //Return type of the payload creator
+  UserAttributes, //  First argument to the payload creator, format interface
+  {
+    extra: {
+      jwt: string
+    },
+    rejectValue : MyKnownError
   }
-  
-/*const fetchUserById = createAsyncThunk(
+>(
     'users/fetchById',
     // Declare the type your function argument here:
     async (user: {}, { rejectWithValue, extra }) => {
         const { } = user
-        const response = await fetch(`https://reqres.in/api/users/${id}`, {
+        const response = await fetch(`https://reqres.in/api/users/${1}`, {
           method: 'PUT',
           // headers: {
           //   Authorization: `Bearer ${extra.jwt}`,
@@ -27,7 +48,7 @@ interface MyData {
         return (await response.json()) as MyData
       
     }
-  )*/
+  )
   
   
 
@@ -41,18 +62,28 @@ const initialState = {
     loading: 'idle',
 } as UsersState
   
-  
-
 const slice = createSlice({
     name: 'test',
     initialState,
     reducers: {
+     /* prepare : {
+          reducer : (state, action: PayloadAction<string>) => {
+
+          }
+          prepare : (name : string) => ({
+            payload : "123"
+          })
+      }*/
     },
     extraReducers: (builder) => {
         // builder.addCase(fetchUserById.pending, (state, action) => {
         //   // both `state` and `action` are now correctly typed
         //   // based on the slice state and the `pending` action creator
-        // })
+        // }),
+        builder.addMatcher<PendingAction>((action) => action.type.endsWith('/fulfilled'),
+        (state, action ) => {
+          state.loading = "pending";
+        })
       },
     
   })

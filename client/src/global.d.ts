@@ -10,4 +10,6 @@ declare module "*.jpg" {
     export default content;
   }
 
+  declare module 'redux-logger';
+
   // declare module 'react-icons';

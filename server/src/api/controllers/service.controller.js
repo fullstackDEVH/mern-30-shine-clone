@@ -1,6 +1,6 @@
 import ServiceModel from "../models/service.model.js";
 import ErrorHandle from "../utils/errorHandle.js";
-import { catchAsync } from "../middleware/catchAsyncError.js";
+import { catchAsync } from "../middlewares/catchAsyncError.js";
 
 export const createService = catchAsync(
     async (req, res, next) => {

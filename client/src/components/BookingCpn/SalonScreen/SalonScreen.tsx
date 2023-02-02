@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useEffect, useState, MouseEvent, ChangeEvent} from 'react';
 import SalonBases from './Child/SalonBases';
 import SalonRegions from './Child/SalonRegions';
 
@@ -8,9 +8,19 @@ interface IProps {
 
 const SalonScreen: FC<IProps> = () => {
     const [isBoxSearch, setIsBoxSearch] = useState<boolean>(false);
+    const [region, setRegion] = useState<string>("");
 
-    const handleShowBox = (e : React.MouseEvent<HTMLElement>) => {        
+    const handleShowBox = (e : MouseEvent<HTMLDivElement>) => {        
         setIsBoxSearch(pre=>!pre)
+    };
+
+    const handleSetRegion = (e : ChangeEvent<HTMLInputElement>) => {
+      setRegion(e.target.value);
+    };
+
+    const handleClickRegion = (e : MouseEvent<HTMLDivElement>, value : string) => {
+      // fetch bases here
+      console.log(e.target);
     };
 
 
@@ -37,6 +47,7 @@ const SalonScreen: FC<IProps> = () => {
                             type="text" 
                             placeholder="Tìm kiếm salon theo tỉnh, thành phố, quận"
                             onBlur={()=>setIsBoxSearch(false)}
+                            onChange={handleSetRegion}
                         />
                     </div>
 
@@ -45,18 +56,14 @@ const SalonScreen: FC<IProps> = () => {
                             <div className={`search-box ${isBoxSearch ? "show" : ""}`}>
                                 <div className="city">
                                     <div className="city-title">Tỉnh thành</div>
-                                    <div className="city-item">
-                                        <div className="city-item-name">Hồ Chí Minh</div>
-                                        <div className="city-item-amount-bases">46 cơ sở</div>
-                                    </div>
-                                    <div className="city-item">
-                                        <div className="city-item-name">Hồ Chí Minh</div>
-                                        <div className="city-item-amount-bases">46 cơ sở</div>
-                                    </div>
-                                    <div className="city-item">
-                                        <div className="city-item-name">Hồ Chí Minh</div>
-                                        <div className="city-item-amount-bases no-bases">46 cơ sở</div>
-                                    </div>
+                                    {
+                                      [1,2,3].map((item, i)=> (
+                                        <div className="city-item" onClick={(e: MouseEvent<HTMLDivElement>)=>handleClickRegion(e, "string")}>
+                                          <div className="city-item-name">Hồ Chí Minh</div>
+                                          <div className="city-item-amount-bases">46 cơ sở</div>
+                                        </div>
+                                      ))
+                                    }
                                 </div>
                             </div> 
                         ) : null
@@ -72,8 +79,9 @@ const SalonScreen: FC<IProps> = () => {
             </div>
 
             <div className="salon-screen-list">
-                <SalonRegions />
-                {/* <SalonBases /> */}
+                {
+                  region ? <SalonBases /> : <SalonRegions /> 
+                }
             </div>
         </div>
     )

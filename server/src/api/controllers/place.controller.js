@@ -1,10 +1,10 @@
-import RegionModel from "../models/regionModel.js";
-import CityProviceModel from "../models/cityProviceModel.js";
+import RegionModel from "../models/region.model.js";
+import CityProviceModel from "../models/cityProvice.model.js";
 import AgencysModel from "../models/agencys.model.js";
 import cityProviceModel from "../models/cityProvice.model.js";
 
 import ErrorHandler from "../utils/errorHandle.js";
-import { catchAsync } from "../middleware/catchAsyncError.js";
+import { catchAsync } from "../middlewares/catchAsyncError.js";
 import mongoose from "mongoose";
 
 // region

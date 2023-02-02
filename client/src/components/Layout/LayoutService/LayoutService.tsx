@@ -18,7 +18,7 @@ const LayoutService:FC<IProp> = () => {
                 <div className="layout-services__list_row">
                     {
                         [1,2,3,4].map((_,i) => (
-                            <div className="layout-services__list_col">
+                            <div className="layout-services__list_col" key={i}>
                                 <a href="/">
                                     <div className="layout-services__list-item">
                                         <div className="list-item-media">

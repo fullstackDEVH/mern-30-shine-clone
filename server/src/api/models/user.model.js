@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
     password : {
         type: String,
         required: [true, "Please enter your password !!"],
-        minLength: [4, "Password should have more than 8 characters"],
+        minLength: [6, "Password should have more than 8 characters"],
         select : false
     },
     name : {
@@ -43,7 +43,7 @@ const userSchema = mongoose.Schema({
     address : {
         type : String,
     },
-    is_verify : {
+    verify_otp : {
         type : Boolean,
         default : false
     },
