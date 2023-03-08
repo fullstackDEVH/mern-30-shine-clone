@@ -31,10 +31,7 @@ const Booking = () => {
                 <div className="booking-header">
                     <span>
                         {
-                            step === 0 ? "Đặt lịch giữ chỗ" :
-                            (
-                                step === 1 ? "Chọn Salon" : "Chọn dịch vụ"
-                            )
+                           ["Đặt lịch giữ chỗ", "Chọn Salon", "Chọn dịch vụ"][step]
                         }
                     </span>
                     {
@@ -46,12 +43,8 @@ const Booking = () => {
                             /> : null
                     }
                 </div>
-                
                 {
-                    step === 0 ? <MainScreen handleStep={handleStep} infor={infor} /> : 
-                        (
-                            step === 1 ? <SalonScreen /> : (step === 2 ? <ServicesScreen /> : null)
-                        )
+                  [<MainScreen handleStep={handleStep} infor={infor} />,  <SalonScreen />, <ServicesScreen />][step]
                 }
 
                 {

@@ -58,7 +58,7 @@ const SalonScreen: FC<IProps> = () => {
                                     <div className="city-title">Tỉnh thành</div>
                                     {
                                       [1,2,3].map((item, i)=> (
-                                        <div className="city-item" onClick={(e: MouseEvent<HTMLDivElement>)=>handleClickRegion(e, "string")}>
+                                        <div className="city-item" onClick={(e: MouseEvent<HTMLDivElement>)=>handleClickRegion(e, "string")} key={i} >
                                           <div className="city-item-name">Hồ Chí Minh</div>
                                           <div className="city-item-amount-bases">46 cơ sở</div>
                                         </div>

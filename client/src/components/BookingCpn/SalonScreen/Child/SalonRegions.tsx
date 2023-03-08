@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useAppDispatch } from 'redux/hook';
+import {  setSalon } from 'redux/slice/bookingSlice';
+import { fetchRegions,fetchProvices } from 'redux/slice/bookingSlice';
+import { AppDispatch } from 'redux/store';
 
 const SalonRegions = () => {
+  // const dispatch = useAppDispatch();
+  const dispatch = useDispatch<AppDispatch>();
+  useEffect(()=> {
+    // dispatch(fetchRegions());
+    dispatch(fetchProvices());
+  }, []);
     return (
         <div className="salon-screen-list-regions">
             <div className="region">

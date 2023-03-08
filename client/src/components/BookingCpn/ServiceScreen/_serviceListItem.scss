@@ -1,0 +1,70 @@
+.service-list-item {
+  border: 1px solid #d1d1d1;
+  border-radius: 6px;
+  overflow: hidden;
+  height: auto;
+
+  .service-media {
+
+  }
+
+  .service-content {
+      padding : 0 8px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;                
+
+      &-title {
+          font-size: 0.95rem;
+          font-weight: 600;
+      }
+
+      &-desc {
+          font-size: 0.8rem;
+          font-weight: 400;
+          margin: 8px 0;
+          color : #5f5f5f;
+          line-height: 1.2rem;
+
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;  
+          overflow: hidden;
+      }
+
+      &-price {
+          font-weight: 500;
+          font-size: 0.95rem;
+      }
+
+      &-btn {
+          margin-top: 0.5rem;
+          border-radius: 3px;
+          border : 1px solid #111;
+          padding : 6px 0;
+          font-weight: 600;
+          font-size: 14px;
+          cursor: pointer;
+          transition: all .3s;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+              margin-right: 5px;
+              display: none;
+          }
+
+          &.selected {
+              background: #ffd65c;
+              border-color: #ffd65c;
+
+              img {
+                  display: block;
+              }
+          }
+      }
+  }
+}
