@@ -1,6 +1,7 @@
 import React , {useEffect, useState}from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
+import { AppDispatch } from 'redux/store';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
@@ -23,12 +24,12 @@ function App() {
   
   const count = useAppSelector((state) => state.booking);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const doShowLogin = () => {
     setOverlay(pre => !pre);
 
-    dispatch(setSalon("QNG"));
+    // dispatch(setSalon("QNG"));
   };
 
  
