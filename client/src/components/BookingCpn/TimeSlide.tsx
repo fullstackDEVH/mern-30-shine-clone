@@ -24,30 +24,24 @@ const TimeSlide: React.FC<IProps> = ({ infor }) => {
       console.log(target.innerText);
     }
   };
-    /*
-        {
-            time : 7,
-            times : [
-                
-            ]
-        }
-    */
   return (
     <>
       {infor?.services.length > 0 ? (
-        <div className="time-box" onClick={handClickBox}>
-          <div className="time-box-contain" style={{ overflowX: "hidden" }}>
-            <Swiper slidesPerView={4} spaceBetween={10}>
-              {[1, 2, 3, 4, 5, 6].map((a, i) => (
-                <SwiperSlide key={i}>
-                  <div className="time-box-contain__item">
-                    <div className="avaiable">7h00</div>
-                    <div>7h30</div>
-                    <div className="unavaiable">7h45</div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+        <div>
+          <div className="time-box" onClick={handClickBox}>
+            <div className="time-box-contain" style={{ overflowX: "hidden" }}>
+              <Swiper slidesPerView={4} spaceBetween={10}>
+                {[1, 2, 3, 4, 5, 6].map((a, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="time-box-contain__item">
+                      <div className="avaiable">7h00</div>
+                      <div className="avaiable">7h30</div>
+                      <div className="unavaiable">7h45</div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </div>
         </div>
       ) : null}

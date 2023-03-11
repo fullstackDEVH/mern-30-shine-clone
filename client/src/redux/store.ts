@@ -1,7 +1,9 @@
 import { configureStore, combineReducers, Middleware, MiddlewareArray  } from '@reduxjs/toolkit';
 import { createLogger } from "redux-logger"; // logger here
-
+import thunkMiddleware from 'redux-thunk';
 import bookingReducer from './slice/bookingSlice';
+import thunk from 'redux-thunk'
+
 
 /*if (__DEV__) {
     const createDebugger = require('redux-flipper').default;
@@ -9,6 +11,7 @@ import bookingReducer from './slice/bookingSlice';
 }*/
 const middlewares: Middleware[] = [];
 middlewares.push(createLogger());
+middlewares.push(thunk);
 
 const rootReducer = combineReducers({
   booking : bookingReducer
@@ -16,10 +19,10 @@ const rootReducer = combineReducers({
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: new MiddlewareArray().concat(middlewares),
+  // middleware: [thunk],
   // middleware: [additionalMiddleware, logger] as const,
   // middleware: (getDefaultMiddleware) =>
-  //   getDefaultMiddleware().concat( middlewares ),
+  //   [...getDefaultMiddleware(), createLogger()]
 });
 
 export type RootState = ReturnType<typeof store.getState>;

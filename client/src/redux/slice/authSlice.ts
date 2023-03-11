@@ -1,3 +1,6 @@
+export default {};
+
+/*
 import { createAsyncThunk, createSlice, PayloadAction, AsyncThunk} from "@reduxjs/toolkit";
 
 type GenericAsyncThunk = AsyncThunk<unknown, unknown, any>
@@ -17,8 +20,19 @@ interface MyKnownError{
   errorMessage: string;
 };
 
-
 // use OMIT AND PICK to delete field in interface
+export const loginUser = createAsyncThunk(
+  "auth/login",
+  async (body, { rejectWithValue }) => {
+    return await loginApi(body).catch((err) => {
+      if (!err.response) {
+        throw err;
+      }
+
+      return rejectWithValue(err.response.data);
+    });
+  }
+);
 
 const fetchUserById = createAsyncThunk<
   MyData, //Return type of the payload creator
@@ -66,14 +80,14 @@ const slice = createSlice({
     name: 'test',
     initialState,
     reducers: {
-     /* prepare : {
+      prepare : {
           reducer : (state, action: PayloadAction<string>) => {
 
           }
           prepare : (name : string) => ({
             payload : "123"
           })
-      }*/
+      }
     },
     extraReducers: (builder) => {
         // builder.addCase(fetchUserById.pending, (state, action) => {
@@ -89,3 +103,5 @@ const slice = createSlice({
   })
 
   export default slice.reducer;
+  
+  */

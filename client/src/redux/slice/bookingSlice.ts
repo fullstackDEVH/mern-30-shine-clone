@@ -1,11 +1,13 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { AxiosError } from "axios";
+import http from '../../constant/api';
 
 
 interface IService {
 
 };
 
-interface IService {
+interface ISalon {
 
 };
 
@@ -30,36 +32,61 @@ interface MyKnownError{
 };
 
 
+interface IRegion {
+  name : string;
+  provices : []
+};
 
-const fetchBooking = createAsyncThunk<
-  string, //Return type of the payload creator
-  BookingState, //  First argument to the payload creator, format interface
-  {
-    extra: {
-      jwt: string
-    },
-    rejectValue : MyKnownError
-  }
+interface IRegionRespon {
+  regions : IRegion[]
+};
+
+export const fetchRegions = createAsyncThunk<
+  IRegionRespon | undefined , void, { }
 >(
-    'users/fetchById',
-    // Declare the type your function argument here:
-    async (user: {}, { rejectWithValue, extra }) => {
-        const { } = user
-        const response = await fetch(`https://reqres.in/api/users/${1}`, {
-          method: 'PUT',
-          // headers: {
-          //   Authorization: `Bearer ${extra.jwt}`,
-          // },
-          body: JSON.stringify(user),
-        })
-        if (response.status === 400) {
-          // Return the known error for future handling
-          return rejectWithValue((await response.json()) as MyKnownError)
+  
+    'booking/regions',
+    async (_ , {})  => {
+      try {
+          
+        const response = await http.get("/regions/all");
+        console.log('res', response)
+
+        if (response.status === 200 ) {
+  
+          return response.data as IRegionRespon;
         }
-        return (await response.json()) as string
       
+      } catch (err) {
+          const error = err as AxiosError<MyKnownError> ;  // this os the lines 
+          if (!error.response) {
+            throw err;
+          }
+          // return thunkApi.rejectWithValue(error.response?.data);
+      }
     }
-  )
+  );
+
+  export const fetchProvices = createAsyncThunk(
+    'booking/provices',
+    async (_ , thunkApi)  => {
+      try {
+          
+        const response = await http.get("/provices/search?keyword=thanh");
+        console.log(response)
+        
+        if (response.status === 200 ) {
+  
+          return response.data ;
+        }
+      
+      } catch (err) {
+          const error = err  ;  // this os the lines 
+        
+          return thunkApi.rejectWithValue(error);
+      }
+    }
+  );
 
 const bookingSlice = createSlice({
     name: 'bookingInfor',
@@ -76,10 +103,27 @@ const bookingSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        // builder.addCase(fetchUserById.pending, (state, action) => {
-        //   // both `state` and `action` are now correctly typed
-        //   // based on the slice state and the `pending` action creator
-        // })
+        // all region 
+        builder.addCase(fetchRegions.pending, (state, action) => {
+          state.loading = "pending";
+        }),
+        builder.addCase(fetchRegions.fulfilled, (state, action : PayloadAction<any>) => {
+          state.loading = "succeeded";
+        }),
+        builder.addCase(fetchRegions.rejected, (state, action) => {
+          state.loading = "failed";
+        }),
+        // provice
+        builder.addCase(fetchProvices.pending, (state, action) => {
+          state.loading = "pending";
+        }),
+        builder.addCase(fetchProvices.fulfilled, (state, action : PayloadAction<any>) => {
+          state.loading = "succeeded";
+          console.log('payload full ', action)
+        }),
+        builder.addCase(fetchProvices.rejected, (state, action) => {
+          state.loading = "failed";
+        })
       },
     
   })
